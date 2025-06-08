@@ -6,14 +6,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/attendance-tracker.git"
+    "url": "https://github.com/kittypony123/attendance-tracker.git"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "(cd client && vite build) && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "lint": "eslint . --ext .ts,.tsx",
@@ -135,4 +135,3 @@
     ]
   }
 }
-

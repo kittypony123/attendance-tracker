@@ -23,16 +23,10 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  // 'root' property has been removed
+  root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    // Explicitly define the entry point for the build
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "client", "index.html"),
-      },
-    },
   },
   server: {
     fs: {
