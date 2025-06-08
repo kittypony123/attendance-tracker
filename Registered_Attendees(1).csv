@@ -1,0 +1,6 @@
+Site ID,Session ID,Person ID,Full Name,Type
+site001,s001_wed,v001,Alice Wonderland,Volunteer
+site001,s001_wed,p001,Diana Prince,Participant
+site001,s001_wed,p002,Edward Scissorhands,Participant
+site002,s002_sat,v002,Bob The Builder,Volunteer
+site002,s002_sat,p003,Fiona Gallagher,Participant
