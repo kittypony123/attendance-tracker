@@ -5,25 +5,23 @@ backend:
       commands:
         - '# Install backend dependencies'
         - npm install
-        - '# Build the backend'
+        - '# Build the backend and frontend'
         - npm run build
 frontend:
   phases:
     preBuild:
       commands:
-        - '# Install frontend dependencies'
-        - cd client && npm install
+        - '# Install all dependencies from the root'
+        - npm install
     build:
       commands:
-        - '# Build the frontend'
+        - '# Build the Vite client app'
         - npm run build
   artifacts:
-    # Point to the correct build output directory
-    baseDirectory: dist
+    # This must match the `outDir` from vite.config.ts
+    baseDirectory: dist/public
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
-      - client/node_modules/**/*
-

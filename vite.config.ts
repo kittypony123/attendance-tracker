@@ -16,6 +16,8 @@ export default defineConfig({
         ]
       : []),
   ],
+  // Define the root directory for the client app
+  root: path.resolve(import.meta.dirname, "client"),
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -23,13 +25,12 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  // Set the root to the 'client' directory
-  root: path.resolve(import.meta.dirname, "client"),
   build: {
-    // Output to a 'dist' directory at the root of the project
-    outDir: path.resolve(import.meta.dirname, "dist"),
+    // Set the output directory to be at the project root
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
+      // Ensure the input path is relative to the new `root`
       input: {
         main: path.resolve(import.meta.dirname, "client", "index.html"),
       },
