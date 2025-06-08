@@ -23,9 +23,11 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  // No 'root' property
+  // Set the root to the 'client' directory
+  root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // Output to a 'dist' directory at the root of the project
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
       input: {

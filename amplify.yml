@@ -3,21 +3,27 @@ backend:
   phases:
     build:
       commands:
+        - '# Install backend dependencies'
         - npm install
+        - '# Build the backend'
         - npm run build
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - '# Install frontend dependencies'
+        - cd client && npm install
     build:
       commands:
+        - '# Build the frontend'
         - npm run build
   artifacts:
+    # Point to the correct build output directory
     baseDirectory: dist
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+      - client/node_modules/**/*
 
